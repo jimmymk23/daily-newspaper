@@ -1,0 +1,91 @@
+@import './_helpers'
+    
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body
+    position: relative
+    overflow-x: hidden
+    font-family: 'Source Serif Pro', serif
+    background: $background-color
+
+.container
+    width: 90vw
+    margin: 0 auto
+
+.button-list
+    display: flex
+    flex-direction: row
+    align-items: center
+    margin: 1.5rem 0
+    @media (min-width: $desktop)
+        width: 100%
+        margin: 2rem 0
+
+button, .button
+    text-decoration: none
+    color: white
+    outline: none
+    background: $accent-color
+    border: 0
+    border-radius: .5rem
+    font-size: 1.25rem
+    font-family: inherit
+    padding: .5em 1em
+    margin-right: .75rem
+    &:hover
+        cursor: pointer
+        background: darken($accent-color, 7%)
+    @media (min-width: $desktop)
+        font-size: 1.4rem
+
+.secondary-bttn
+    color: $accent-color
+    background: $background-color
+    border: 1px solid $accent-color
+    &:hover
+        background: mix($background-color, $accent-color, 90%)
+        color: darken($accent-color, 10%)
+        border: 1px solid darken($accent-color, 10%)
+
+.small-bttn
+    font-size: 1rem
+    padding: .35em .75em
+    margin-right: .5rem
+    @media (min-width: $desktop)
+        font-size: 1.4rem
+
+.link
+    color: $accent-color
+
+.loading-gif
+    width: 40%
+    display: block
+    margin: 0 auto
+
+.default-hidden
+    display: none
+
+.flex-container
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    @media (min-width: $desktop)
+        flex-direction: row
+        justify-content: space-evenly
+
+.head-room
+    margin-top: 1rem
+
+
+
+@import 'nav'
+@import 'feeds'
+@import 'home'
+@import 'post'
+@import 'form'
+@import 'footer'
+@import '404'

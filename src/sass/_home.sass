@@ -1,0 +1,19 @@
+@import '_helpers'
+
+.home-grid
+    display: grid
+    gap: 1rem
+    width: 90vw
+    margin: 0 auto
+    // rows / columns
+    grid-template: auto auto / auto
+    grid-template-areas: "article" "review"
+    @media (min-width: $desktop)
+        grid-template: auto / 2fr 1fr
+        grid-template-areas: "article review"
+
+.article-feed
+    grid-area: article
+    
+.review-feed
+    grid-area: review

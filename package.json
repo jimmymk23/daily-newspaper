@@ -1,0 +1,44 @@
+{
+  "name": "daily-testicle",
+  "version": "2.1.4",
+  "scripts": {
+    "dev": "nodemon index.js & snowpack dev",
+    "build": "snowpack build",
+    "start": "node index",
+    "herokuStart": "heroku local",
+    "publish": "git push && git checkout main && git rebase develop && git push && git push heroku main && git checkout develop"
+  },
+  "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^24.0.0",
+    "@ckeditor/ckeditor5-react": "^3.0.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "bcrypt": "^5.0.0",
+    "cheerio": "^1.0.0-rc.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "html-to-react": "^1.4.5",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.6.3",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-html-parser": "^2.0.2",
+    "react-router-dom": "^5.2.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "@snowpack/plugin-babel": "^2.1.6",
+    "@snowpack/plugin-react-refresh": "^2.4.0",
+    "@snowpack/plugin-sass": "^1.3.0",
+    "@snowpack/plugin-webpack": "^2.3.0",
+    "http-proxy": "^1.18.1",
+    "nodemon": "^2.0.7",
+    "sass": "^1.32.5",
+    "snowpack": "^2.18.5",
+    "webpack-cli": "^4.4.0"
+  }
+}

@@ -1,0 +1,99 @@
+@import './_helpers'
+
+form
+    width: 90vw
+    margin: 1rem auto
+    img
+        display: block
+        width: 50%
+        margin: 1rem auto
+        max-width: 250px
+        @media (min-width: $desktop)
+            width: 40%
+    label
+        display: block
+        margin: 1rem 0 .5rem 0
+        font-size: 1rem
+        @media (min-width: $desktop)
+            font-size: 1.2rem
+    input, textarea
+        width: 100%
+        outline: none
+        border: 1px solid $accent-color
+        border-radius: .5rem
+        font-size: 1rem
+        padding: .7rem .4rem
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu"
+        transition: all .2s ease
+        &:focus
+            border: 3px solid $accent-color
+        @media (min-width: $desktop)
+            font-size: 1.2rem
+    .radio-list
+        .radio
+            position: relative
+            cursor: pointer
+            line-height: 20px
+            font-size: 14px
+            margin: 15px
+            margin-left: 0
+        .label
+            position: relative
+            display: block
+            float: left
+            margin-right: 10px
+            width: 20px
+            height: 20px
+            border: 2px solid $gray
+            border-radius: 100%
+            -webkit-tap-highlight-color: transparent
+            &:after
+                content: ''
+                position: absolute
+                top: 3px
+                left: 3px
+                width: 10px
+                height: 10px
+                border-radius: 100%
+                background: $accent-color
+                transform: scale(0)
+                transition: all .2s ease
+                opacity: .08
+                pointer-events: none
+            &:hover
+                .label:after
+                    transform: scale(3.6)  
+        input[type="radio"]:checked + .label
+            border-color: $accent-color
+            &:after
+                transform: scale(1)
+                transition: all .2s cubic-bezier(.35,.9,.4,.9)
+                opacity: 1
+        .cntr
+            position: absolute
+            top: calc(50% - 10px)
+            left: 0
+            width: 100%
+            text-align: center
+        .hidden
+            display: none
+    textarea
+        height: 40vh
+    .ck-content
+        height: 50vh
+        font-size: 1rem
+    p
+        margin-top: 1rem
+        line-height: 1.5em
+        font-size: .9rem
+    .message
+        color: red
+    .emphasis
+        color: $accent-color
+    .other-options
+        font-size: 1rem
+    @media (min-width: $desktop)
+        width: 60vw
+        margin: 3rem auto
+        h2
+            font-size: 2rem
