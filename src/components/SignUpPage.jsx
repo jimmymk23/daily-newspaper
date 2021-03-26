@@ -70,7 +70,7 @@ export default function SignUpPage() {
 					id='lName-input'
 				/>
 
-				<label htmlFor='username'>Userame</label>
+				<label htmlFor='username'>Username</label>
 				<input
 					value={username}
 					onChange={(e) => setUsername(e.target.value)}
@@ -94,9 +94,7 @@ export default function SignUpPage() {
 					<span className='emphasis'>
 						use a unique password that you don't use anywhere else
 					</span>
-					. If you're reading this newspaper and would like to
-					contribute you're probably too dumb to have known that
-					before so now you know, bitch.
+					.
 				</p>
 
 				<p className='other-options'>
