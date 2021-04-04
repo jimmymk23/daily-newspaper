@@ -1,12 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link, useParams, useHistory } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Parser } from 'html-to-react';
 const htmlToReactParser = new Parser();
 import { formatDate } from '../../util';
 import Loading from '../Loading';
 
 export default function Post() {
-	const history = useHistory();
+	const router = useRouter();
 	const { id } = useParams();
 	const messageElementRef = useRef(null);
 

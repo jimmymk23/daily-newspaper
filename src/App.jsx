@@ -10,7 +10,7 @@ import HomeSection from './components/HomeSection';
 import Post from './components/post/Post';
 import Edit from './components/post/Edit';
 import Compose from './components/post/Compose';
-import Drafts from './components/Drafts';
+// import Drafts from './components/Drafts';
 import SignUpPage from './components/SignUpPage';
 import SignInPage from './components/SignInPage';
 import Account from './components/Account';
@@ -39,7 +39,7 @@ export default function App() {
 						path='/compose'
 						render={() => <Compose />}
 					/>
-					<ProtectedRoute path='/drafts' render={() => <Drafts />} />
+					{/* <ProtectedRoute path='/drafts' render={() => <Drafts />} /> */}
 					<ProtectedRoute
 						path='/prompts'
 						render={() => <PromptsDash />}

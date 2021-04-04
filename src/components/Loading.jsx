@@ -1,7 +1,14 @@
-import React from 'react';
-import loadingGif from '../assets/loading-original.gif';
-// import loadingGif from '../assets/loading.gif';
+import Image from 'next/image';
 
-export default function Loading() {
-	return <img src={loadingGif} className='loading-gif' alt='Loading Gif' />;
+const Loading = () => {
+    return (
+        <Image
+            src='/assets/loading-original.gif'
+            layout='fill'
+            className='loading-gif'
+            alt='Loading Gif'
+        />
+    );
 }
+
+export default Loading;
