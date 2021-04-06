@@ -1,6 +1,6 @@
 {
-  "name": "daily-testicle",
-  "version": "2.1.4",
+  "name": "daily-newspaper",
+  "version": "0.0.1",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
