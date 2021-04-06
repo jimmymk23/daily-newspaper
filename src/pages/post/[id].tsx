@@ -43,7 +43,6 @@ export const getStaticPaths = async () => {
 		.find({ status: 'published' })
 		.toArray();
 	const id_array = posts_array.map((post: any) => String(post._id));
-	console.log(id_array);
 
 	client.close();
 

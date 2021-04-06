@@ -5,28 +5,25 @@ import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
-export default function Nav() {
-	let token: string | boolean;
-
+const Nav = () => {
 	// State
 	const [navOpen, setNavOpen] = useState(false);
+	const [token, setToken] = useState(
+		Cookie.get('token') ? JSON.parse(Cookie.get('token')) : false
+	);
 
 	// Page Location URL
 	let location = useRouter().pathname;
 
 	// Effects
+	// useEffect(() => {
+	// 	token = Cookie.get('token') ? JSON.parse(Cookie.get('token')) : false;
+	// }, []);
 	useEffect(() => {
-		token = localStorage.getItem('token')
-			? localStorage.getItem('token')
-			: false;
-	}, []);
-	useEffect(() => {
-		token = localStorage.getItem('token')
-			? localStorage.getItem('token')
-			: false;
+		setToken(Cookie.get('token') ? JSON.parse(Cookie.get('token')) : false);
 	}, [location]);
 
-    // Handlers
+	// Handlers
 	const logoutHandler = () => {
 		Cookie.remove('token');
 	};
@@ -114,4 +111,6 @@ export default function Nav() {
 			</nav>
 		</header>
 	);
-}
+};
+
+export default Nav;
