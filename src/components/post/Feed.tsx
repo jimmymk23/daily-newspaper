@@ -17,7 +17,7 @@ export default function Feed({ type, feedPosts }: FeedProps) {
 
 			{feedPosts.length > 0 ? (
 				feedPosts.map((post: any) => {
-					return <Preview post={post} key={uuidv4()} />;
+					return <Preview post={post} key={post._id} />;
 				})
 			) : (
 				// If there are no posts of this type

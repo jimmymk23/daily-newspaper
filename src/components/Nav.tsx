@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Cookie from 'js-cookie';
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
-export default function Nav({ logoutHandler }) {
+export default function Nav() {
 	let token: string | boolean;
 
 	// State
@@ -24,6 +25,11 @@ export default function Nav({ logoutHandler }) {
 			? localStorage.getItem('token')
 			: false;
 	}, [location]);
+
+    // Handlers
+	const logoutHandler = () => {
+		Cookie.remove('token');
+	};
 
 	return (
 		<header>
