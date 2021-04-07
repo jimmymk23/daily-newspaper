@@ -1,7 +1,6 @@
 import Preview from './Preview';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSadTear } from '@fortawesome/free-solid-svg-icons';
-import { v4 as uuidv4 } from 'uuid';
 
 interface FeedProps {
 	type: string;
@@ -17,7 +16,7 @@ export default function Feed({ type, feedPosts }: FeedProps) {
 
 			{feedPosts.length > 0 ? (
 				feedPosts.map((post: any) => {
-					return <Preview post={post} key={post._id} />;
+					return <Preview post={post} key={post.id} />;
 				})
 			) : (
 				// If there are no posts of this type

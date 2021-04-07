@@ -21,6 +21,15 @@ export const formatDate = (dateString) => {
 	return `${month} ${day}, ${year}`;
 };
 
+export const capitalize = (sentence) => {
+	const word_array = sentence.split(' ');
+	const cap_word_array = word_array.map((word) => {
+		return word.charAt(0).toUpperCase() + word.slice(1);
+	});
+	const cap_sentence = cap_word_array.join(' ');
+	return cap_sentence;
+};
+
 // *-*-*- DEPRECATED -*-*-*
 // export const htmlParser = (htmlString) => {
 // 	const parser = new DOMParser();

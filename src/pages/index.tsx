@@ -1,10 +1,9 @@
+import fetch from 'node-fetch';
+
 import Head from 'next/head';
 import Nav from '../components/Nav';
 import HomeSection from '../components/HomeSection';
 import Footer from '../components/Footer';
-
-import mongodb from 'mongodb';
-const MongoClient = mongodb.MongoClient;
 
 const index = ({ posts }) => {
 	return (
@@ -20,23 +19,11 @@ const index = ({ posts }) => {
 };
 
 export const getStaticProps = async () => {
-	const client = new MongoClient(process.env.CONNECTION_STRING, {
-		useNewUrlParser: true,
-		useUnifiedTopology: true,
-	});
-
-	const connected_client = await client.connect();
-	const posts_collection = connected_client
-		.db('DailyTesticle')
-		.collection('posts');
-	const posts_array = await posts_collection
-		.find({ status: 'published' })
-		.toArray();
-
-	client.close();
+	const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+	const posts = await response.json();
 
 	return {
-		props: { posts: JSON.parse(JSON.stringify(posts_array.reverse())) },
+		props: { posts },
 	};
 };
 
